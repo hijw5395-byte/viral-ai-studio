@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#100d1c">
+<meta name="description" content="VIRAL AI STUDIO: convierte una idea en un proyecto de video para YouTube.">
+<link rel="manifest" href="manifest.webmanifest">
+<title>VIRAL AI STUDIO</title>
+<style>
+:root{color-scheme:dark;--bg:#100d1c;--panel:#1a1629;--panel2:#211b35;--line:#39304e;--txt:#f6f1ff;--muted:#b6abc9;--orange:#ff8a27;--purple:#9c72ff;--good:#57d69b}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 90% 0%,#33204e 0,transparent 36%),var(--bg);color:var(--txt);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+.wrap{max-width:920px;margin:auto;padding:22px 16px 60px}.top{display:flex;align-items:center;gap:12px;margin-bottom:24px}.logo{width:48px;height:48px;border-radius:15px;background:linear-gradient(135deg,var(--orange),var(--purple));display:grid;place-items:center;font-size:24px;font-weight:900;color:#1a1028}.brand{font-weight:900;letter-spacing:.08em;font-size:16px}.sub{font-size:11px;color:var(--muted);letter-spacing:.16em}
+.hero{padding:22px 0 14px}.eyebrow{color:var(--orange);font-weight:800;letter-spacing:.15em;font-size:11px}.hero h1{font-size:clamp(28px,7vw,44px);line-height:1.05;margin:8px 0 12px}.grad{background:linear-gradient(90deg,#ff9b3d,#b28aff);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{color:var(--muted);max-width:650px;margin:0}
+.card{background:linear-gradient(180deg,var(--panel),#171323);border:1px solid var(--line);border-radius:20px;padding:18px;margin-top:18px;box-shadow:0 12px 34px #0003}.card h2{font-size:17px;margin:0 0 14px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:620px){.grid{grid-template-columns:1fr}}
+label{display:block;font-size:12px;font-weight:700;color:#d8cde8;margin:0 0 6px}input,select,textarea{width:100%;border:1px solid var(--line);border-radius:12px;background:#100d1c;color:var(--txt);padding:12px 13px;font:inherit;outline:none}textarea{min-height:88px;resize:vertical}input:focus,select:focus,textarea:focus{border-color:var(--purple)}
+.hint{font-size:12px;color:var(--muted);margin:6px 0 0}.btn{border:0;border-radius:13px;padding:13px 17px;background:linear-gradient(90deg,var(--orange),#ffb34f);color:#24142b;font-weight:900;font-size:15px;width:100%;cursor:pointer;margin-top:14px}.btn:disabled{opacity:.55;cursor:wait}.btn.secondary{background:#2b2340;color:var(--txt);border:1px solid var(--line)}.status{font-size:13px;color:var(--muted);margin-top:12px;min-height:20px}.status.good{color:var(--good)}.status.err{color:#ff8f8f}
+.output{display:none}.output.show{display:block}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.tab{border:1px solid var(--line);background:#100d1c;color:var(--muted);border-radius:999px;padding:8px 12px;cursor:pointer}.tab.active{background:#392a55;color:white;border-color:#7356a8}.pane{display:none}.pane.active{display:block}.result{white-space:pre-wrap;background:#100d1c;border:1px solid var(--line);padding:14px;border-radius:12px;max-height:560px;overflow:auto;font-size:13px}.scene{padding:12px;border:1px solid var(--line);border-radius:12px;margin:9px 0;background:#100d1c}.scene strong{color:#ffb66d}.small{font-size:12px;color:var(--muted)}.actions{display:flex;gap:9px;flex-wrap:wrap}.actions .btn{width:auto;flex:1;min-width:140px}.notice{border-left:3px solid var(--orange);padding:10px 12px;background:#241c30;border-radius:8px;color:#d9cde9;font-size:12px;margin-top:12px}
+footer{margin-top:24px;color:var(--muted);font-size:11px;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><div class="logo">V</div><div><div class="brand">VIRAL AI STUDIO</div><div class="sub">TU PRODUCTORA DE YOUTUBE</div></div></header>
+  <section class="hero"><div class="eyebrow">IDEA → PROYECTO DE VIDEO</div><h1>Tu próxima historia empieza <span class="grad">acá.</span></h1><p>Escribí un tema y prepará un guion, escenas, narración y subtítulos para un video de YouTube de 5 a 10 minutos.</p></section>
+
+  <section class="card">
+    <h2>01 · Configurá tu video</h2>
+    <label for="topic">¿De qué tratará tu video?</label>
+    <textarea id="topic" placeholder="Ej.: 7 misterios del universo que la ciencia todavía no puede explicar"></textarea>
+    <div class="grid" style="margin-top:12px">
+      <div><label for="duration">Duración</label><select id="duration"><option value="5">5 minutos</option><option value="7" selected>7 minutos</option><option value="10">10 minutos</option></select></div>
+      <div><label for="style">Estilo</label><select id="style"><option>Documental cinematográfico</option><option>Misterio y suspenso</option><option>Curiosidades virales</option><option>Explicativo y dinámico</option><option>Historia impactante</option></select></div>
+    </div>
+    <div style="margin-top:12px"><label for="audience">Público</label><select id="audience"><option>Audiencia general</option><option>Jóvenes y adultos</option><option>Amantes de ciencia y tecnología</option><option>Amantes de misterios e historia</option></select></div>
+    <div class="notice"><b>Conexión IA:</b> necesitás una clave de Gemini API de Google AI Studio. La clave se usa desde este navegador y no se guarda en el proyecto. No publiques una versión con tu clave incorporada.</div>
+    <div style="margin-top:12px"><label for="apikey">Clave de Gemini API</label><input id="apikey" type="password" autocomplete="off" placeholder="Pegá tu clave API acá"><p class="hint">Conseguí una clave en <b>aistudio.google.com/app/apikey</b>. Revisá los límites y condiciones del nivel gratuito.</p></div>
+    <button class="btn" id="generate">✦ GENERAR MI PROYECTO DE VIDEO</button>
+    <div id="status" class="status" role="status"></div>
+  </section>
+
+  <section class="card output" id="output">
+    <h2>02 · Tu proyecto generado</h2>
+    <div class="tabs">
+      <button class="tab active" data-tab="script">Guion</button><button class="tab" data-tab="scenes">Escenas</button><button class="tab" data-tab="metadata">YouTube</button><button class="tab" data-tab="subs">Subtítulos</button>
+    </div>
+    <div class="pane active" id="pane-script"><div class="result" id="script"></div></div>
+    <div class="pane" id="pane-scenes"><div id="scenes"></div></div>
+    <div class="pane" id="pane-metadata"><div class="result" id="metadata"></div></div>
+    <div class="pane" id="pane-subs"><div class="result" id="subs"></div></div>
+    <div class="actions"><button class="btn secondary" id="download">↓ Descargar paquete (.zip)</button><button class="btn secondary" id="copy">Copiar guion</button></div>
+    <p class="small">Esta primera versión genera el paquete de producción. Todavía no renderiza ni descarga un MP4 automáticamente; esa será la siguiente etapa técnica.</p>
+  </section>
+  <footer>VIRAL AI STUDIO · Prototipo 0.1 · Tus ideas, tu canal.</footer>
+</div>
+<script>
+let project=null;
+const $=id=>document.getElementById(id);
+function setStatus(msg,type=""){const s=$("status");s.textContent=msg;s.className="status "+type}
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function makeSrt(text){
+ const parts=text.split(/(?<=[.!?])\\s+/).filter(Boolean); let t=0, out=[];
+ const fmt=n=>{let h=Math.floor(n/3600),m=Math.floor(n%3600/60),s=n%60;return [h,m,s].map(x=>String(x).padStart(2,"0")).join(":")+",000"};
+ parts.forEach((p,i)=>{let start=t;let dur=Math.max(3,Math.ceil(p.split(/\\s+/).length/2.4));t+=dur;out.push(`${i+1}\\n${fmt(start)} --> ${fmt(t)}\\n${p}\\n`)});
+ return out.join("\\n");
+}
+function promptFor(topic,duration,style,audience){
+ return `Actuá como productor, guionista e investigador de YouTube. Crea un paquete completo para un video ORIGINAL en español latino sobre: "${topic}". Duración objetivo: ${duration} minutos. Estilo: ${style}. Público: ${audience}.
+No prometas viralidad. Usa un gancho fuerte en los primeros 15 segundos, ritmo dinámico, transiciones narrativas y una conclusión memorable. No inventes datos, citas, fuentes ni estadísticas. Si el tema requiere actualidad o evidencia que no podés verificar, marca claramente qué debe comprobarse.
+Devuelve ÚNICAMENTE JSON válido, sin markdown, con este esquema:
+{
+"title":"título atractivo y honesto",
+"thumbnail_text":"texto breve para miniatura",
+"description":"descripción para YouTube",
+"tags":["etiqueta"],
+"script":"guion completo de voz en off, con marcas de sección",
+"scenes":[{"number":1,"duration_seconds":8,"visual":"descripción visual","motion":"movimiento de cámara o animación","voiceover":"fragmento de narración","onscreen_text":"texto breve opcional","sound":"ambiente o efecto sugerido"}],
+"verification_notes":["dato o afirmación que requiere verificación"]
+}
+Crea suficientes escenas para cubrir el guion; cada escena debe durar entre 5 y 12 segundos. El guion debe tener extensión coherente con la duración objetivo.`;
+}
+async function generate(){
+ const topic=$("topic").value.trim(), key=$("apikey").value.trim();
+ if(!topic){setStatus("Escribí primero el tema del video.","err");return}
+ if(!key){setStatus("Pegá tu clave de Gemini API para conectar el cerebro de la aplicación.","err");return}
+ $("generate").disabled=true;setStatus("La IA está preparando el guion y las escenas…");
+ try{
+  const model="gemini-2.0-flash";
+  const url=`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(key)}`;
+  const res=await fetch(url,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({contents:[{parts:[{text:promptFor(topic,$("duration").value,$("style").value,$("audience").value)}]}],generationConfig:{responseMimeType:"application/json",temperature:0.7}})});
+  const data=await res.json();
+  if(!res.ok) throw new Error(data.error?.message||"No se pudo conectar con Gemini. Revisá la clave y el límite de uso.");
+  const raw=data.candidates?.[0]?.content?.parts?.map(p=>p.text||"").join("")||"";
+  project=JSON.parse(raw.replace(/^```json\\s*/,"").replace(/```$/,"").trim());
+  render();
+  $("output").classList.add("show");setStatus("¡Proyecto creado! Revisá el guion y las escenas antes de publicar.","good");
+  $("output").scrollIntoView({behavior:"smooth"});
+ }catch(e){setStatus("Error: "+e.message,"err")}
+ finally{$("generate").disabled=false}
+}
+function render(){
+ $("script").textContent=project.script||"";
+ $("metadata").textContent=`TÍTULO\\n${project.title||""}\\n\\nTEXTO DE MINIATURA\\n${project.thumbnail_text||""}\\n\\nDESCRIPCIÓN\\n${project.description||""}\\n\\nETIQUETAS\\n${(project.tags||[]).join(", ")}\\n\\nDATOS A VERIFICAR\\n${(project.verification_notes||[]).map(x=>"• "+x).join("\\n")}`;
+ $("subs").textContent=makeSrt(project.script||"");
+ $("scenes").innerHTML=(project.scenes||[]).map(s=>`<div class="scene"><strong>ESCENA ${esc(s.number)} · ${esc(s.duration_seconds)} s</strong><p><b>Visual:</b> ${esc(s.visual)}</p><p><b>Movimiento:</b> ${esc(s.motion)}</p><p><b>Narración:</b> ${esc(s.voiceover)}</p><p><b>Texto:</b> ${esc(s.onscreen_text)}</p><p><b>Sonido:</b> ${esc(s.sound)}</p></div>`).join("");
+}
+document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));document.querySelectorAll(".pane").forEach(x=>x.classList.remove("active"));b.classList.add("active");$("pane-"+b.dataset.tab).classList.add("active")}));
+$("generate").addEventListener("click",generate);
+$("copy").addEventListener("click",async()=>{if(project){await navigator.clipboard.writeText(project.script||"");setStatus("Guion copiado.","good")}});
+$("download").addEventListener("click",async()=>{
+ if(!project)return;
+ const files={"guion.txt":project.script||"","youtube.txt":$("metadata").textContent,"subtitulos.srt":makeSrt(project.script||""),"escenas.json":JSON.stringify(project.scenes||[],null,2),"proyecto.json":JSON.stringify(project,null,2)};
+ // ZIP writer using a tiny uncompressed ZIP implementation
+ const enc=new TextEncoder(), chunks=[], central=[];let offset=0;
+ const crc32=(buf)=>{let c=-1;for(let b of buf){c^=b;for(let k=0;k<8;k++)c=(c>>>1)^((c&1)?0xedb88320:0)}return(c^-1)>>>0};
+ const u16=n=>[n&255,(n>>>8)&255],u32=n=>[n&255,(n>>>8)&255,(n>>>16)&255,(n>>>24)&255];
+ for(const [name,content] of Object.entries(files)){let nb=enc.encode(name),data=enc.encode(content),crc=crc32(data),local=new Uint8Array([...u32(0x04034b50),...u16(20),...u16(0),...u16(0),...u16(0),...u16(0),...u32(crc),...u32(data.length),...u32(data.length),...u16(nb.length),...u16(0),...nb,...data]);chunks.push(local);central.push(new Uint8Array([...u32(0x02014b50),...u16(20),...u16(20),...u16(0),...u16(0),...u16(0),...u16(0),...u32(crc),...u32(data.length),...u32(data.length),...u16(nb.length),...u16(0),...u16(0),...u16(0),...u16(0),...u32(0),...u32(offset),...nb]));offset+=local.length}
+ const csize=central.reduce((a,b)=>a+b.length,0),end=new Uint8Array([...u32(0x06054b50),...u16(0),...u16(0),...u16(central.length),...u16(central.length),...u32(csize),...u32(offset),...u16(0)]);
+ const blob=new Blob([...chunks,...central,end],{type:"application/zip"}),a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="viral-ai-studio-proyecto.zip";a.click();URL.revokeObjectURL(a.href);
+});
+if("serviceWorker" in navigator && location.protocol.startsWith("http"))navigator.serviceWorker.register("./sw.js").catch(()=>{});
+</script>
+</body></html>
